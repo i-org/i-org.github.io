@@ -1,13 +1,18 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: 爱编——第一种国际化编程语言
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
+  <h1>最新进展</h1>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
+  </ul>
+  <h2>常用文档</h2>
+  <ul>
+      <li><a href="/docs/HyperSpec/Front/index.htm">通链参考手册</a>HyperSpec for Common Lisp</li>
+      <li><a href="">其他</a></li>
   </ul>
 </div>
