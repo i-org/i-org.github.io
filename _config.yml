@@ -3,4 +3,4 @@ markdown: redcarpet
 pygments: true
 
 # 指定源码都放在docs文件夹里，而生成的则放在顶级目录
-source: doc
+source: source
