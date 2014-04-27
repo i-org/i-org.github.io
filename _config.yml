@@ -2,5 +2,5 @@ name: 爱编——第一种国际化编程语言
 markdown: redcarpet
 pygments: true
 
-# 指定服务器使用的目录
-destination:      _site
+# 指定源码都放在docs文件夹里，而生成的则放在顶级目录
+source: doc
