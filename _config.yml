@@ -3,4 +3,4 @@ markdown: redcarpet
 pygments: true
 
 # 指定服务器使用的目录
-destination:      _sites
+destination:      _site
