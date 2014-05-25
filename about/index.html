@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>爱编日新月异</title>
+<title>关于爱编和尔雅</title>
+<meta name="description" content="爱编——第一种国际化编程语言">
+
+<link rel="canonical" href="http://i-org.tk/about/">
 
 <!-- 皮肤样式 -->
 <link rel="stylesheet" href="/themes/atlas/css/style.css">
@@ -13,13 +17,11 @@
 <!-- 首页和404各站特异的样式 -->
 <link rel="stylesheet" href="/static/main.css">
 
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-
-  </head>
+</head>
+    
   <body>
-
-    <div class="site">
 
       <div class="left-top-hook"></div><!-- 站内信息 -->
 <div class="right-top-hook"></div><!-- 页内信息 -->
@@ -28,34 +30,39 @@
 <div class="right-bottom-hook"></div><!-- 站内系统 -->
 <div class="left-bottom-hook"></div><!-- 站内栏目 -->
 
+<header class="site-header"> 
 <nav class="site-nav">
   <ul>
     <li><a href="/">首页</a></li>
-    <li><a href="/category/news.html">项目进展</a></li>
-    <li><a href="/category/download.html">资源下载</a></li>
-    <li><a href="/category/bbs.html">讨论区</a></li>
-    <li><a href="/category/demo.html">应用示例</a></li>
-    <li><a href="/category/api.html">软口文档</a></li>
-    <li><a href="/category/people.html">人与团体</a></li>
+    <li><a href="/news/">项目进展</a></li>
+    <li><a href="/download/">资源下载</a></li>
+    <li><a href="/bbs/">讨论区</a></li>
+    <li><a href="/demo/">应用示例</a></li>
+    <li><a href="/api/">软口文档</a></li>
+    <li><a href="/people/">人与团体</a></li>
   </ul>
 </nav>
 
+</header>
 
+<nav class="outline toc">
+</nav>
       
-      <h1>爱编日新月异的发展</h1>
-<section class="subject-archive">
-<div class="post">
-    <ul class="post-list">
-      
-      <li><span>2014-04-25</span><a href="/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96.html">关于爱编</a>
-      </li>
-      
-    </ul>
+      <div class="post">
+
+  <header class="post-header">
+    <h1>关于爱编和尔雅</h1>
+  </header>
+
+  <article class="post-content">
+    
+
+  </article>
+
 </div>
-</section> 
 
 
-      <footer>
+      <footer class="site-footer">
   <div class="contact">
     <img src="/static/i-org-standard.png">
   </div>
@@ -67,18 +74,19 @@
     </p>
   </div>
   <div class="contact">
-    <p>
-      <a href="https://github.com/i-org">项目所在仓库</a><br />
-      
-    </p>
+    <p><a href="mailto:gmail for jobinson99">gmail for jobinson99</a></p>
+    <p class="rss-subscribe"><a href="/feed.xml">戳此处关注我</a></p>
+    
   </div>
 
   <div class="contact">
-    <p>致谢：<a href="http://www.github.com">github</a>，
+    <p>致谢：
+      <a href="http://www.github.com">github</a>，
       <a href="http://jekyllrb.com/">jekyll</a>，
       <a href="http://johnmacfarlane.net/pandoc/index.html">pandoc</a>，以及一切对本项目有帮助的人！
     </p>
-
+    <p><a href="https://github.com/i-org">项目所在仓库</a></p>
+      
     <!--百度统计-->
     <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -88,10 +96,11 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </footer>
 
 
-    </div>
-    <script data-main="/themes/atlas/static/javascript/main" src="/themes/atlas/javascript/require.js"  defer async="true"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-main="/themes/atlas/static/javascript/main" src="/themes/atlas/static/javascript/require.js" defer async="true"></script>
+    
+    <script type="text/javascript" src="/themes/atlas/javascript/modules/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="/themes/atlas/javascript/modules/jquery.js"></script>
     <script type="text/javascript" src="/themes/atlas/javascript/outliner.js"></script>
+    <script type="text/javascript" src="/themes/atlas/javascript/toc.js"></script>
   </body>
 </html>
