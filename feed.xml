@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>爱编——第一种国际化编程语言</title>
-    <description>爱编——第一种国际化编程语言</description>
+    <title>爱编</title>
+    <description>第一种国际化编程语言</description>
     <link>http://i-org.tk/</link>
     <atom:link href="http://i-org.tk/feed.xml" rel="self" type="application/rss+xml" />
     
