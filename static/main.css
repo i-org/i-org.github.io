@@ -65,33 +65,14 @@
 }
 
 .index-maxim {
-    background: white;
+    background: #BBBBFF;
     font-size: 90%;
 
     padding: 5px 5px 5px 5px;
     display: block;
     margin: 1em 0;
-
-    height: 100px;
-    overflow-y: hidden;
-    overflow-x: auto;
     
-    column-width: 20px;
-    -webkit-column-width: 20px;
-    -moz-column-width: 20px;
-
-    column-rule: 1px solid #dcdcdc;
-    -moz-column-rule: 1px solid #dcdcdc;
-    -webkit-column-rule: 1px solid #dcdcdc;
-
-    column-gap: 20px;
-    -moz-column-gap: 20px;
-    -webkit-column-gap: 20px;
     
-    direction:rtl;
-    unicode-bidi:bidi-override;
-    word-wrap: break-word;
-
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
