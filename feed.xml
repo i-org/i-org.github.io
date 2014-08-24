@@ -3,8 +3,8 @@
   <channel>
     <title>爱编</title>
     <description>第一种国际化编程语言</description>
-    <link>http://i-org.tk/</link>
-    <atom:link href="http://i-org.tk/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://i-org.ga/</link>
+    <atom:link href="http://i-org.ga/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>关于爱编</title>
@@ -175,8 +175,8 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Fri, 2014 Apr 25 01:38:33 +0800</pubDate>
-        <link>http://i-org.tk/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96/</link>
-        <guid isPermaLink="true">http://i-org.tk/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96/</guid>
+        <link>http://i-org.ga/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96/</link>
+        <guid isPermaLink="true">http://i-org.ga/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96/</guid>
       </item>
     
   </channel>
