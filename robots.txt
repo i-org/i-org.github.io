@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /static/
-Disallow: /themes/
-
-Sitemap: http://i-org.ga/sitemap.xml
