@@ -7,8 +7,344 @@
     <atom:link href="http://i-org.ga/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>爱编设计</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/static/i-small.png&quot; alt=&quot;i-org-logo-min&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;爱编系统设定&lt;/h1&gt;
+&lt;p&gt;状态含义：●完成 ■待测试 ◆被认领开发中 ★计划&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;运行机制&lt;/h3&gt;
+
+&lt;p&gt;为提高交互环境的运行速度，文件载入可根据设定的编码和方言类型，自动调用相应的方言 解析器&lt;/p&gt;
+
+&lt;p&gt;头部指定方言环境：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;i-zh-jobinson 表示使用的是 &lt;em&gt;爱编-中文-黑传说版&lt;/em&gt; 的方言环境&lt;/li&gt;
+  &lt;li&gt;i-en-jobinson 表示使用的是 &lt;em&gt;爱编-英文-黑传说版&lt;/em&gt; 的方言环境&lt;/li&gt;
+  &lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;默认至少两个编译方向：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;编译为js&lt;/li&gt;
+  &lt;li&gt;编译为二进制&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;基本核心要尽可能精简小巧，其他的功能以扩展提供，以减少维护成本，提高核心稳定度。不能像通链那样 大而全。&lt;/p&gt;
+
+&lt;p&gt;类似 c 和 lua的关系，c的稳健精简利于lua的扩展。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;语法设定&lt;/h3&gt;
+
+&lt;p&gt;兼容键盘&lt;/p&gt;
+
+&lt;p&gt;手写情况下，括号类型有两种比较容易识别：大括号&lt;code&gt;{}&lt;/code&gt;和中括号&lt;code&gt;[]&lt;/code&gt;，其他的都较容易混淆，比如： &lt;code&gt;()&lt;/code&gt; &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;，右括号和右尖号容易和 &lt;em&gt;7&lt;/em&gt; 混淆。&lt;/p&gt;
+
+&lt;p&gt;手写时，大括号可以一笔完成，而中括号需要两笔，所以，一般更应该采用大括号&lt;code&gt;{}&lt;/code&gt;！&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[]&lt;/code&gt;用于表达宏？&lt;/p&gt;
+
+&lt;p&gt;标识符最好能简化到类似 html的三个 &lt;code&gt;&amp;lt; &amp;gt; &amp;amp;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;功能系统&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首.尾系统&lt;/li&gt;
+  &lt;li&gt;类型设定系统：可选&lt;/li&gt;
+  &lt;li&gt;宏&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;统筹法系统（有必要么？）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;实时解析器&lt;/li&gt;
+  &lt;li&gt;内建编译器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;语法设定&lt;/h2&gt;
+
+&lt;p&gt;TODO: 语法设定仍然需要完善
+检验：如何原文表述自己&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;基本形式设定&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;成对标识：成对标识方便代码结构显示和处理。
+设定：全角大括号 &lt;code&gt;｛｝&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;｛ ｛
+｝ ｝
+&amp;amp;  &amp;#38; &amp;amp;  这个半角&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;前置标识表达式：全部使用全角符号。设定：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  ｛操作 内容｝
+    
+  ｛&amp;lt;命令名&amp;gt;+&amp;lt;操作选定&amp;gt;+&amp;lt;操作目标&amp;gt;+&amp;lt;结果筛选参数&amp;gt;｝
+  ｛&amp;lt;function&amp;gt;+&amp;lt;operation&amp;gt;+[target]+&amp;lt;option&amp;gt;｝
+            
+  ｛设函数  函数名 ｛甲参数 乙参数 &amp;amp;可选参数 &amp;amp;关键字式参数｝｛函数内容｝｝
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;注释方式：对称符号，写的时候繁琐了点，但界限明显。简符码式注释？（链码用的就是此类）html式注释？&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  \*  *\
+  ※   太复杂，和键盘不兼容
+  ;;
+  \
+  /
+  //
+  &amp;lt;!--- 注释 ---&amp;gt;
+  ｛！-- 注释 --｝
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;字符设定：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  英文字母：a b c d e f g h i j k l m n o p q r s t u v w s y z
+  对应
+  中文笔画：横竖撇奈 竖直弯勾
+  ㇐ ㇑ ㇓ ㇏㇔ ㇕ ㇖ ㇗ ㇘ ㇙ ㇚ ㇛ ㇜
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;命名机制：
+实际上后台是以数字形式命名，前台使用的是符号语义化的语言。以数字名字作为爱编 标口（标准接口），比如：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  say == 001 == 说
+  defun == 002 == 设
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;应用的名位规则：以应用创建时间来作为起始，自动生成。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;命名约定&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;文件头部设定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;※ -*- coding: utf-8 il:zh-jobinson -*-
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;必须&lt;/strong&gt;：在源码文件开头声明设定所使用语言版本&lt;/p&gt;
+
+&lt;p&gt;各语言标识对应：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;中文：
+zh-jobinson  语言设计者黑传说常用的中文编程词汇
+zh-dao 　　  道教用语版
+zh-fo 　　   佛教用语版
+zh-wenyan    文言文版
+
+英文：
+en-jobinson 　　语言设计者黑传说常用的英文编程词汇
+en-commonlisp 　通链版词汇
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;设定创建时间：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;下面可参考神编和scheme，尽可能精炼&lt;/p&gt;
+
+&lt;h2 id=&quot;meta-operators&quot;&gt;元操作符： meta operators&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;原样    quote&lt;/li&gt;
+  &lt;li&gt;比较    equal&lt;/li&gt;
+  &lt;li&gt;元否    atom&lt;/li&gt;
+  &lt;li&gt;取首    first&lt;/li&gt;
+  &lt;li&gt;取余    rest&lt;/li&gt;
+  &lt;li&gt;拼凑    construct&lt;/li&gt;
+  &lt;li&gt;假设    condition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;元操作符生成基本操作符&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-operators&quot;&gt;基本操作符 basic operators&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;命名   label  代码块级别&lt;/li&gt;
+  &lt;li&gt;标记   tag  代码块内&lt;/li&gt;
+  &lt;li&gt;跳转&lt;/li&gt;
+  &lt;li&gt;指定   let&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;交互环境用的基本操作符&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;捕获  catch&lt;/li&gt;
+  &lt;li&gt;抛出  throw&lt;/li&gt;
+  &lt;li&gt;必运行 &lt;/li&gt;
+  &lt;li&gt;读    read&lt;/li&gt;
+  &lt;li&gt;写    write&lt;/li&gt;
+  &lt;li&gt;运行  eval  相对于cl的eval-when&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;基本操作符生成其他内置函数和机制&lt;/p&gt;
+
+&lt;h2 id=&quot;begin-operators&quot;&gt;常用操作符 begin operators&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;设 defun&lt;/li&gt;
+  &lt;li&gt;重复 loop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;数据类型：&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;判断：真 无 假  booleans T nil F&lt;/li&gt;
+  &lt;li&gt;字符：  strings  字串&lt;/li&gt;
+  &lt;li&gt;数字:  numbers&lt;/li&gt;
+  &lt;li&gt;数列:  lists   ｛｝&lt;/li&gt;
+  &lt;li&gt;:tuples&lt;/li&gt;
+  &lt;li&gt;:closures&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:continuations&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;文件 streams&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;函数： functions&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;名讳 symbols&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;错误信息： errors 提示 prompts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;常用函数：&lt;/h2&gt;
+&lt;p&gt;### 条件结构：
++ 若 if 
++ 与 and 
++ 或 or 
++ 当 cond&lt;/p&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;流程控制&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;标识&lt;/li&gt;
+  &lt;li&gt;必然运行&lt;/li&gt;
+  &lt;li&gt;然后 接下去干什么——包括跳转到、跳出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-10&quot;&gt;数据操作：&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;数据类型判断&lt;/li&gt;
+  &lt;li&gt;数据转换&lt;/li&gt;
+  &lt;li&gt;数据遍历&lt;/li&gt;
+  &lt;li&gt;数据提取&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-11&quot;&gt;赋值&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;设 set&lt;/li&gt;
+  &lt;li&gt;获取值 get-value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-12&quot;&gt;前置标识表达式操作&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;构建 cons&lt;/li&gt;
+  &lt;li&gt;取首 first&lt;/li&gt;
+  &lt;li&gt;取余 rest&lt;/li&gt;
+  &lt;li&gt;判断是否为数列 consp ?cons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-13&quot;&gt;函数构建&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;定义函数 defun&lt;/li&gt;
+  &lt;li&gt;省名函数 lambda&lt;/li&gt;
+  &lt;li&gt;局部赋值 let&lt;/li&gt;
+  &lt;li&gt;比较 =&lt;/li&gt;
+  &lt;li&gt;类型设定 type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;error-prompt-&quot;&gt;提醒处理  error prompt 一般用于提示出错信息&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;提示 prompt  （error放入此处）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vector&quot;&gt;矢量 vector&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;创建&lt;/li&gt;
+  &lt;li&gt;数据位置&lt;/li&gt;
+  &lt;li&gt;矢量否？ vector?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-14&quot;&gt;文件操作&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;逐字读取 read-byte&lt;/li&gt;
+  &lt;li&gt;输出为文件&lt;/li&gt;
+  &lt;li&gt;打开文件 open&lt;/li&gt;
+  &lt;li&gt;关闭文件 close&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-15&quot;&gt;时间操作&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;获得时间 get-time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-16&quot;&gt;数学操作&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;加 add&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;减 subtract&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;× 乘 * multiply&lt;/li&gt;
+  &lt;li&gt;/  除 divide&lt;/li&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;大于 greater?&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;  小于 less?&lt;/li&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;=  大于等于 greater-than-or-equal-to?&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;=  小于等于 less-than-or-equal-to?&lt;/li&gt;
+  &lt;li&gt;判断是否是数字 number?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-17&quot;&gt;二进制操作&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;进制转换 &lt;/li&gt;
+  &lt;li&gt;取位&lt;/li&gt;
+  &lt;li&gt;换位&lt;/li&gt;
+  &lt;li&gt;计算（加 减 乘 除等）&lt;/li&gt;
+  &lt;li&gt;比较&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-18&quot;&gt;统筹法系统&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;抽象方法 defgeneric&lt;/li&gt;
+  &lt;li&gt;方法 defmethod&lt;/li&gt;
+  &lt;li&gt;抽象类 defclass&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 2014 Oct 29 18:29:59 +0800</pubDate>
+        <link>http://i-org.ga/%E8%AF%B4%E6%98%8E/2014/10/29/%E7%88%B1%E7%BC%96%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://i-org.ga/%E8%AF%B4%E6%98%8E/2014/10/29/%E7%88%B1%E7%BC%96%E8%AE%BE%E8%AE%A1/</guid>
+      </item>
+    
+      <item>
         <title>关于爱编</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/static/i-org-standard.png&quot; alt=&quot;i-logo-min&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/static/i-org-standard.png&quot; alt=&quot;i-org-logo-min&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;open-source-internationl-programing-language&quot;&gt;&lt;strong&gt;爱编 Open Source Internationl Programing Language&lt;/strong&gt;&lt;/h2&gt;
 
@@ -69,15 +405,10 @@
 &lt;h3 id=&quot;we-need-help&quot;&gt;我们需要 We Need Help：&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;更多的合作者：包括编程人员参与程序实现，各种语言和文化背景精通者参与翻译。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;更多的意见建议者&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;更多的宣传者，学习者&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;更多的合作者：包括编程人员参与程序实现，各种语言和文化背景精通者参与翻译。&lt;/li&gt;
+  &lt;li&gt;更多的意见建议者&lt;/li&gt;
+  &lt;li&gt;更多的宣传者，学习者&lt;/li&gt;
+  &lt;li&gt;更多的支持者&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;background&quot;&gt;项目提出背景 Background：&lt;/h3&gt;
@@ -118,19 +449,30 @@
 
 &lt;h3 id=&quot;section&quot;&gt;需求：&lt;/h3&gt;
 
+&lt;p&gt;&lt;strong&gt;时代呼唤新的编程语言！！！&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;全民编程时代：编码作为现代生活的基本技能，需要更简单、更易掌握的编程语言。&lt;/li&gt;
   &lt;li&gt;专业领域需要更简单、易掌握的编程语言，使得可以把更多心思放在专业领域。&lt;/li&gt;
-  &lt;li&gt;适应更多输入设备的需要&lt;/li&gt;
+  &lt;li&gt;适应更多输入设备的需要。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;设计之初深受链码影响：&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;所受影响&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;设计之初深受链码影响：&lt;/h4&gt;
 
 &lt;ol&gt;
   &lt;li&gt;快速成型&lt;/li&gt;
   &lt;li&gt;其基础技术标准完备稳定&lt;/li&gt;
   &lt;li&gt;需要改进的方面：因为历史原因，其用语晦涩，有些规则不统一，比如对矢量和散列表的定位语法不同： &lt;code&gt;ELT&lt;/code&gt; 是 &lt;code&gt;矢量名+位置&lt;/code&gt; ，而 &lt;code&gt;GETHASH&lt;/code&gt; 是 &lt;code&gt;位+散列表名&lt;/code&gt; 。&lt;/li&gt;
+  &lt;li&gt;链码的缺陷是大而全，难掌握和维护&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h4 id=&quot;c-lua-javascript&quot;&gt;受C lua javascript影响&lt;/h4&gt;
+
+&lt;p&gt;C的稳健和lua的灵活融合，不就是一个低耦合的通链么？而这种分拆，恰好规避了通链的 一体大全 的缺陷。&lt;/p&gt;
+
+&lt;p&gt;另外，吸纳了 nodejs的 metalsmith的极小核心+全插件化的极简和强大扩展性模式。&lt;/p&gt;
 
 &lt;h3 id=&quot;solution&quot;&gt;解决方案 Solution：&lt;/h3&gt;
 &lt;p&gt;为了解决上述提到的各种问题和需求，我们的解决方案：&lt;/p&gt;
@@ -161,18 +503,24 @@
 
 &lt;p&gt;尔雅国际化编程语言促进会：一个致力于推动编程语言国际化的组织。&lt;/p&gt;
 
-&lt;p&gt;i.org = International Programming Language Stardard Promotion Org&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://i-org.ga&quot;&gt;【i.org】&lt;/a&gt; = International Programming Language Stardard Promotion Organization&lt;/p&gt;
 
 &lt;h3 id=&quot;notes&quot;&gt;注 Notes：&lt;/h3&gt;
 
 &lt;ol&gt;
+  &lt;li&gt;此项目已经设想多年，由于初始设计者本身一直较忙，断断续续积累，直到最近才开立这个项目，让诸位久违了，在此致歉。&lt;/li&gt;
+  &lt;li&gt;此项目尽可能做到说明文字双语甚至多语翻译。&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;此项目已经设想多年，由于初始设计者本身一直较忙，断断续续积累，直到最近才开立这个项目，让诸位久违了，在此致歉。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;此项目尽可能做到说明文字双语甚至多语翻译。&lt;/p&gt;
+    &lt;p&gt;TODO:依语言设说明文件，而不是放在一页：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; readme-zh.md
+ readme-en.md
+ readme-jp.md
+ ……
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
 </description>
         <pubDate>Fri, 2014 Apr 25 01:38:33 +0800</pubDate>
         <link>http://i-org.ga/%E8%AF%B4%E6%98%8E/2014/04/25/%E5%85%B3%E4%BA%8E%E7%88%B1%E7%BC%96/</link>
