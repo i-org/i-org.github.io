@@ -11,6 +11,7 @@
         <description>&lt;p&gt;&lt;img src=&quot;/static/i-small.png&quot; alt=&quot;i-org-logo-min&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;爱编系统设定&lt;/h1&gt;
+
 &lt;p&gt;状态含义：●完成 ■待测试 ◆被认领开发中 ★计划&lt;/p&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;运行机制&lt;/h3&gt;
@@ -221,20 +222,24 @@ en-commonlisp 　通链版词汇
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;section-8&quot;&gt;常用函数：&lt;/h2&gt;
-&lt;p&gt;### 条件结构：
-+ 若 if 
-+ 与 and 
-+ 或 or 
-+ 当 cond&lt;/p&gt;
 
-&lt;h3 id=&quot;section-9&quot;&gt;流程控制&lt;/h3&gt;
+&lt;h3 id=&quot;section-9&quot;&gt;条件结构：&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;若 if &lt;/li&gt;
+  &lt;li&gt;与 and &lt;/li&gt;
+  &lt;li&gt;或 or&lt;/li&gt;
+  &lt;li&gt;非 not&lt;/li&gt;
+  &lt;li&gt;当 cond&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-10&quot;&gt;流程控制&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;标识&lt;/li&gt;
   &lt;li&gt;必然运行&lt;/li&gt;
   &lt;li&gt;然后 接下去干什么——包括跳转到、跳出&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-10&quot;&gt;数据操作：&lt;/h3&gt;
+&lt;h3 id=&quot;section-11&quot;&gt;数据操作：&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;数据类型判断&lt;/li&gt;
   &lt;li&gt;数据转换&lt;/li&gt;
@@ -242,13 +247,13 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;数据提取&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-11&quot;&gt;赋值&lt;/h3&gt;
+&lt;h3 id=&quot;section-12&quot;&gt;赋值&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;设 set&lt;/li&gt;
   &lt;li&gt;获取值 get-value&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-12&quot;&gt;前置标识表达式操作&lt;/h3&gt;
+&lt;h3 id=&quot;section-13&quot;&gt;前置标识表达式操作&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;构建 cons&lt;/li&gt;
   &lt;li&gt;取首 first&lt;/li&gt;
@@ -256,7 +261,7 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;判断是否为数列 consp ?cons&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-13&quot;&gt;函数构建&lt;/h3&gt;
+&lt;h3 id=&quot;section-14&quot;&gt;函数构建&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;定义函数 defun&lt;/li&gt;
   &lt;li&gt;省名函数 lambda&lt;/li&gt;
@@ -277,7 +282,7 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;矢量否？ vector?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-14&quot;&gt;文件操作&lt;/h3&gt;
+&lt;h3 id=&quot;section-15&quot;&gt;文件操作&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;逐字读取 read-byte&lt;/li&gt;
   &lt;li&gt;输出为文件&lt;/li&gt;
@@ -285,12 +290,12 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;关闭文件 close&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-15&quot;&gt;时间操作&lt;/h3&gt;
+&lt;h3 id=&quot;section-16&quot;&gt;时间操作&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;获得时间 get-time&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-16&quot;&gt;数学操作&lt;/h3&gt;
+&lt;h3 id=&quot;section-17&quot;&gt;数学操作&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;ul&gt;
@@ -319,7 +324,7 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;判断是否是数字 number?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-17&quot;&gt;二进制操作&lt;/h3&gt;
+&lt;h3 id=&quot;section-18&quot;&gt;二进制操作&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;进制转换 &lt;/li&gt;
   &lt;li&gt;取位&lt;/li&gt;
@@ -328,13 +333,67 @@ en-commonlisp 　通链版词汇
   &lt;li&gt;比较&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;section-18&quot;&gt;统筹法系统&lt;/h2&gt;
+&lt;h2 id=&quot;section-19&quot;&gt;统筹法系统&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;抽象方法 defgeneric&lt;/li&gt;
   &lt;li&gt;方法 defmethod&lt;/li&gt;
   &lt;li&gt;抽象类 defclass&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;section-20&quot;&gt;代码示例&lt;/h2&gt;
+
+&lt;p&gt;爱编 指定 
++ 用语模板——用于适应各种编程习惯，无论怎么变，都能变成标准的
++ 编译模板——用于适应各种应用，比如有的对浮点精度要求高，可在此设定&lt;/p&gt;
+
+&lt;p&gt;解析器 基本函数&lt;/p&gt;
+
+&lt;p&gt;转码，运行，使用规则，运行机制，调用插件&lt;/p&gt;
+
+&lt;p&gt;前置标识 成对括号&lt;/p&gt;
+
+&lt;p&gt;代码示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;｛！国别编号：黑传说版语法｝
+｛
+  ｛／／程序基本信息设定
+     ｛／／程序基本信息｝ 
+     ｛／／导入模块｝
+     ｛／／导出模块｝
+   ｝
+  ｛／／程序正文 
+
+     ｛设 天  ｛高，长，宽｝
+         ｛曰 “天地玄黄”｝
+         ｛× ｛× 高 ∞｝｛× 长 ∞｝｛× 宽 ∞｝｝
+      ｝
+  ｝
+｝
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;调用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;｛天 ｛10 20 30｝｝
+&amp;gt; 天地玄黄
+&amp;gt; ∞
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;条件：一个条件或多个条件都这样！不用分 if else cons when&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;｛当 ｛｛条件1｝ ｛对应程序1｝｝
+         ｛｛条件2｝ ｛对应程序2｝｝
+         ｛其他｝
+｝
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;循环&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;｛循环 ｛参数名 递增｛范围 1 2｝｝｛循环内容｝｝
+
+｛设 递增 ｛数｝ ｛＋ 数 1｝｝
+｛设 参数名 数｝
+&lt;/code&gt;&lt;/pre&gt;
 
 </description>
         <pubDate>Wed, 2014 Oct 29 18:29:59 +0800</pubDate>

@@ -99,6 +99,7 @@
     <p><img src="/static/i-small.png" alt="i-org-logo-min" /></p>
 
 <h1 id="section">爱编系统设定</h1>
+
 <p>状态含义：●完成 ■待测试 ◆被认领开发中 ★计划</p>
 
 <h3 id="section-1">运行机制</h3>
@@ -309,20 +310,24 @@ en-commonlisp 　通链版词汇
 </ul>
 
 <h2 id="section-8">常用函数：</h2>
-<p>### 条件结构：
-+ 若 if 
-+ 与 and 
-+ 或 or 
-+ 当 cond</p>
 
-<h3 id="section-9">流程控制</h3>
+<h3 id="section-9">条件结构：</h3>
+<ul>
+  <li>若 if </li>
+  <li>与 and </li>
+  <li>或 or</li>
+  <li>非 not</li>
+  <li>当 cond</li>
+</ul>
+
+<h3 id="section-10">流程控制</h3>
 <ul>
   <li>标识</li>
   <li>必然运行</li>
   <li>然后 接下去干什么——包括跳转到、跳出</li>
 </ul>
 
-<h3 id="section-10">数据操作：</h3>
+<h3 id="section-11">数据操作：</h3>
 <ul>
   <li>数据类型判断</li>
   <li>数据转换</li>
@@ -330,13 +335,13 @@ en-commonlisp 　通链版词汇
   <li>数据提取</li>
 </ul>
 
-<h3 id="section-11">赋值</h3>
+<h3 id="section-12">赋值</h3>
 <ul>
   <li>设 set</li>
   <li>获取值 get-value</li>
 </ul>
 
-<h3 id="section-12">前置标识表达式操作</h3>
+<h3 id="section-13">前置标识表达式操作</h3>
 <ul>
   <li>构建 cons</li>
   <li>取首 first</li>
@@ -344,7 +349,7 @@ en-commonlisp 　通链版词汇
   <li>判断是否为数列 consp ?cons</li>
 </ul>
 
-<h3 id="section-13">函数构建</h3>
+<h3 id="section-14">函数构建</h3>
 <ul>
   <li>定义函数 defun</li>
   <li>省名函数 lambda</li>
@@ -365,7 +370,7 @@ en-commonlisp 　通链版词汇
   <li>矢量否？ vector?</li>
 </ul>
 
-<h3 id="section-14">文件操作</h3>
+<h3 id="section-15">文件操作</h3>
 <ul>
   <li>逐字读取 read-byte</li>
   <li>输出为文件</li>
@@ -373,12 +378,12 @@ en-commonlisp 　通链版词汇
   <li>关闭文件 close</li>
 </ul>
 
-<h3 id="section-15">时间操作</h3>
+<h3 id="section-16">时间操作</h3>
 <ul>
   <li>获得时间 get-time</li>
 </ul>
 
-<h3 id="section-16">数学操作</h3>
+<h3 id="section-17">数学操作</h3>
 <ul>
   <li>
     <ul>
@@ -407,7 +412,7 @@ en-commonlisp 　通链版词汇
   <li>判断是否是数字 number?</li>
 </ul>
 
-<h3 id="section-17">二进制操作</h3>
+<h3 id="section-18">二进制操作</h3>
 <ul>
   <li>进制转换 </li>
   <li>取位</li>
@@ -416,13 +421,67 @@ en-commonlisp 　通链版词汇
   <li>比较</li>
 </ul>
 
-<h2 id="section-18">统筹法系统</h2>
+<h2 id="section-19">统筹法系统</h2>
 
 <ul>
   <li>抽象方法 defgeneric</li>
   <li>方法 defmethod</li>
   <li>抽象类 defclass</li>
 </ul>
+
+<h2 id="section-20">代码示例</h2>
+
+<p>爱编 指定 
++ 用语模板——用于适应各种编程习惯，无论怎么变，都能变成标准的
++ 编译模板——用于适应各种应用，比如有的对浮点精度要求高，可在此设定</p>
+
+<p>解析器 基本函数</p>
+
+<p>转码，运行，使用规则，运行机制，调用插件</p>
+
+<p>前置标识 成对括号</p>
+
+<p>代码示例：</p>
+
+<pre><code>｛！国别编号：黑传说版语法｝
+｛
+  ｛／／程序基本信息设定
+     ｛／／程序基本信息｝ 
+     ｛／／导入模块｝
+     ｛／／导出模块｝
+   ｝
+  ｛／／程序正文 
+
+     ｛设 天  ｛高，长，宽｝
+         ｛曰 “天地玄黄”｝
+         ｛× ｛× 高 ∞｝｛× 长 ∞｝｛× 宽 ∞｝｝
+      ｝
+  ｝
+｝
+</code></pre>
+
+<p>调用</p>
+
+<pre><code>｛天 ｛10 20 30｝｝
+&gt; 天地玄黄
+&gt; ∞
+</code></pre>
+
+<p>条件：一个条件或多个条件都这样！不用分 if else cons when</p>
+
+<pre><code>｛当 ｛｛条件1｝ ｛对应程序1｝｝
+         ｛｛条件2｝ ｛对应程序2｝｝
+         ｛其他｝
+｝
+</code></pre>
+
+<p>循环</p>
+
+<pre><code>｛循环 ｛参数名 递增｛范围 1 2｝｝｛循环内容｝｝
+
+｛设 递增 ｛数｝ ｛＋ 数 1｝｝
+｛设 参数名 数｝
+</code></pre>
 
 
   </article>
